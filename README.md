@@ -1,6 +1,6 @@
 # Todo App
 
-A simple todo application built with HTML, CSS, and JavaScript.
+A simple todo web application built with HTML, CSS, and JavaScript.
 
 ## Features
 
@@ -10,17 +10,13 @@ A simple todo application built with HTML, CSS, and JavaScript.
 ## How to Use
 
 1. Enter a task in the input field.
-2. Click the "Add" button or press Enter to add the task to the list.
-3. Click the "Delete" button next to a task to remove it from the list.
+2. Click the "Add" button or press Enter to add the task.
+3. Click the "Delete" button to remove a task.
 
 ## Installation
 
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/anirudhkotla/mcp-harness-test.git
-    ```
-2. Open `index.html` in your web browser.
+No installation is required. Simply open the `index.html` file in your web browser.
 
 ## License
 
-This project is licensed under the MIT License.
+This project is open source and available under the MIT License.

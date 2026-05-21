@@ -36,6 +36,7 @@ body {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin-left: 8px;
 }
 
 #add-btn:hover {
@@ -65,6 +66,7 @@ body {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    padding: 4px 8px;
 }
 
 .delete-btn:hover {

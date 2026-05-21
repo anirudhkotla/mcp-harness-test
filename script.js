@@ -13,18 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
     function addTodo() {
         const todoText = todoInput.value.trim();
         if (todoText !== '') {
-            const todoItem = document.createElement('li');
-            todoItem.className = 'todo-item';
-            todoItem.innerHTML = `
+            const li = document.createElement('li');
+            li.className = 'todo-item';
+            li.innerHTML = `
                 <span>${todoText}</span>
                 <button class="delete-btn">Delete</button>
             `;
-            todoList.appendChild(todoItem);
+            todoList.appendChild(li);
             todoInput.value = '';
 
-            const deleteBtn = todoItem.querySelector('.delete-btn');
+            const deleteBtn = li.querySelector('.delete-btn');
             deleteBtn.addEventListener('click', () => {
-                todoItem.remove();
+                li.remove();
             });
         }
     }
