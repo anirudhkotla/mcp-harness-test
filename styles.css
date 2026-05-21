@@ -1,146 +1,85 @@
-:root {
-  color-scheme: light;
-  --bg: #eaf4ff;
-  --panel: #ffffff;
-  --ink: #102a43;
-  --muted: #5f7897;
-  --blue: #2563eb;
-  --blue-dark: #1d4ed8;
-  --blue-soft: #dbeafe;
-  --line: #bfd7f5;
-  --shadow: 0 24px 60px rgba(37, 99, 235, 0.18);
-}
-
-* {
-  box-sizing: border-box;
-}
-
 body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background:
-    radial-gradient(circle at top left, rgba(96, 165, 250, 0.34), transparent 34rem),
-    linear-gradient(135deg, #f8fbff 0%, var(--bg) 100%);
-  color: var(--ink);
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-.app-shell {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 32px 16px;
-}
-
-.counter-panel {
-  width: min(680px, 100%);
-  background: rgba(255, 255, 255, 0.94);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  box-shadow: var(--shadow);
-  padding: 28px;
-}
-
-.header-row {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 26px;
-}
-
-.eyebrow {
-  margin: 0 0 4px;
-  color: var(--blue);
-  font-size: 0.78rem;
-  font-weight: 800;
-  text-transform: uppercase;
+.container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
 }
 
 h1 {
-  margin: 0;
-  font-size: clamp(2rem, 6vw, 3.1rem);
-  letter-spacing: 0;
+    text-align: center;
+    color: #333;
 }
 
-.best-score {
-  flex: 0 0 auto;
-  border: 1px solid var(--line);
-  background: var(--blue-soft);
-  color: var(--blue-dark);
-  border-radius: 999px;
-  padding: 8px 12px;
-  font-weight: 800;
+.input-container {
+    display: flex;
+    margin-bottom: 20px;
 }
 
-.counter-display {
-  display: grid;
-  place-items: center;
-  min-height: 180px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: linear-gradient(180deg, #f8fbff 0%, #eef6ff 100%);
-  margin-bottom: 18px;
+#todo-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
 }
 
-#count {
-  font-size: clamp(4rem, 18vw, 8rem);
-  font-weight: 900;
-  line-height: 1;
-  color: var(--blue-dark);
+#add-todo {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
 }
 
-.controls {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
+#add-todo:hover {
+    background-color: #0056b3;
 }
 
-button {
-  min-height: 48px;
-  border: 0;
-  border-radius: 8px;
-  background: var(--blue);
-  color: #ffffff;
-  cursor: pointer;
-  font: inherit;
-  font-weight: 800;
-  transition: transform 160ms ease, background 160ms ease;
+#todo-list {
+    list-style-type: none;
+    padding: 0;
 }
 
-button:hover {
-  background: var(--blue-dark);
-  transform: translateY(-1px);
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    margin-bottom: 10px;
 }
 
-#decrement,
-#reset {
-  background: #e0efff;
-  color: var(--blue-dark);
-  border: 1px solid var(--line);
+.todo-item.completed {
+    text-decoration: line-through;
+    color: #888;
 }
 
-#decrement:hover,
-#reset:hover {
-  background: #cfe4ff;
+.delete-btn {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
 }
 
-.hint {
-  margin: 18px 0 0;
-  color: var(--muted);
-  text-align: center;
-}
-
-@media (max-width: 560px) {
-  .counter-panel {
-    padding: 20px;
-  }
-
-  .header-row {
-    flex-direction: column;
-  }
-
-  .controls {
-    grid-template-columns: 1fr;
-  }
+.delete-btn:hover {
+    background-color: #cc0000;
 }

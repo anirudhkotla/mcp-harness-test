@@ -1,35 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mcp Harness Test</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Todo App</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="app-shell">
-    <section class="counter-panel" aria-labelledby="app-title">
-      <div class="header-row">
-        <div>
-          <p class="eyebrow">Interactive counter</p>
-          <h1 id="app-title">Mcp Harness Test</h1>
+    <div class="container">
+        <h1>Todo App</h1>
+        <div class="input-container">
+            <input type="text" id="todo-input" placeholder="Add a new task...">
+            <button id="add-todo">Add</button>
         </div>
-        <div class="best-score" id="best-score">Best 0</div>
-      </div>
-
-      <div class="counter-display" aria-live="polite">
-        <span id="count">0</span>
-      </div>
-
-      <div class="controls" aria-label="Counter controls">
-        <button type="button" id="decrement">Decrease</button>
-        <button type="button" id="increment">Increase</button>
-        <button type="button" id="reset">Reset</button>
-      </div>
-
-      <p class="hint">Your best score is saved in this browser.</p>
-    </section>
-  </main>
-  <script src="script.js"></script>
+        <ul id="todo-list"></ul>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

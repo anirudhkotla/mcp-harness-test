@@ -1,33 +1,36 @@
-const countEl = document.querySelector("#count");
-const bestScoreEl = document.querySelector("#best-score");
-const incrementButton = document.querySelector("#increment");
-const decrementButton = document.querySelector("#decrement");
-const resetButton = document.querySelector("#reset");
+document.addEventListener('DOMContentLoaded', () => {
+    const todoInput = document.getElementById('todo-input');
+    const addTodoBtn = document.getElementById('add-todo');
+    const todoList = document.getElementById('todo-list');
 
-let count = Number(localStorage.getItem("blueCounterCount") || "0");
-let best = Number(localStorage.getItem("blueCounterBest") || "0");
+    addTodoBtn.addEventListener('click', addTodo);
+    todoInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            addTodo();
+        }
+    });
 
-function save() {
-  localStorage.setItem("blueCounterCount", String(count));
-  localStorage.setItem("blueCounterBest", String(best));
-}
+    function addTodo() {
+        const todoText = todoInput.value.trim();
+        if (todoText === '') return;
 
-function render() {
-  countEl.textContent = String(count);
-  bestScoreEl.textContent = `Best ${best}`;
-}
+        const todoItem = document.createElement('li');
+        todoItem.className = 'todo-item';
 
-function updateCount(nextCount) {
-  count = nextCount;
-  if (count > best) {
-    best = count;
-  }
-  save();
-  render();
-}
+        const todoTextSpan = document.createElement('span');
+        todoTextSpan.textContent = todoText;
 
-incrementButton.addEventListener("click", () => updateCount(count + 1));
-decrementButton.addEventListener("click", () => updateCount(count - 1));
-resetButton.addEventListener("click", () => updateCount(0));
+        const deleteBtn = document.createElement('button');
+        deleteBtn.className = 'delete-btn';
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.addEventListener('click', () => {
+            todoItem.remove();
+        });
 
-render();
+        todoItem.appendChild(todoTextSpan);
+        todoItem.appendChild(deleteBtn);
+        todoList.appendChild(todoItem);
+
+        todoInput.value = '';
+    }
+});
