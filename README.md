@@ -15,7 +15,11 @@ A simple todo web application built with HTML, CSS, and JavaScript.
 
 ## Installation
 
-No installation is required. Simply open the `index.html` file in your web browser.
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/anirudhkotla/mcp-harness-test.git
+    ```
+2. Open `index.html` in your web browser.
 
 ## License
 
