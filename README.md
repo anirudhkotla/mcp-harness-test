@@ -1,22 +1,13 @@
-# Todo App
+# Mcp Harness Test
 
-A simple todo application built with HTML, CSS, and JavaScript.
+A lightweight interactive click counter built with plain HTML, CSS, and JavaScript.
+
+## Run
+
+Open `index.html` in a browser.
 
 ## Features
 
-- Add new todos
-- Delete todos
-
-## How to Use
-
-1. Enter a todo in the input field.
-2. Click the "Add" button or press Enter to add the todo.
-3. Click the "Delete" button to remove a todo.
-
-## Installation
-
-No installation required. Simply open the `index.html` file in your browser.
-
-## License
-
-This project is open source and available under the MIT License.
+- Increment, decrement, and reset the counter
+- Tracks the best score locally with localStorage
+- Bluish responsive interface
