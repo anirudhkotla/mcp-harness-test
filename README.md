@@ -15,12 +15,8 @@ A simple todo web application built with HTML, CSS, and JavaScript.
 
 ## Installation
 
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/yourusername/todo-app.git
-    ```
-2. Open `index.html` in your browser.
+No installation is required. Simply open the `index.html` file in your web browser.
 
 ## License
 
-This project is licensed under the MIT License.
+This project is open source and available under the MIT License.
