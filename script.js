@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const todoInput = document.getElementById('todo-input');
-    const addBtn = document.getElementById('add-btn');
+    const addTodoBtn = document.getElementById('add-todo');
     const todoList = document.getElementById('todo-list');
 
-    addBtn.addEventListener('click', addTodo);
+    addTodoBtn.addEventListener('click', addTodo);
     todoInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             addTodo();
@@ -12,9 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function addTodo() {
         const todoText = todoInput.value.trim();
-        if (todoText !== '') {
+        if (todoText) {
             const li = document.createElement('li');
-            li.className = 'todo-item';
             li.innerHTML = `
                 <span>${todoText}</span>
                 <button class="delete-btn">Delete</button>
@@ -25,6 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const deleteBtn = li.querySelector('.delete-btn');
             deleteBtn.addEventListener('click', () => {
                 li.remove();
+            });
+
+            li.addEventListener('click', () => {
+                li.classList.toggle('completed');
             });
         }
     }
