@@ -6,7 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f4f4f4;
+    background-color: #f4f4f9;
 }
 
 .container {
@@ -15,14 +15,10 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
-}
-
-h1 {
     text-align: center;
-    color: #333;
 }
 
-.input-container {
+#todo-form {
     display: flex;
     margin-bottom: 20px;
 }
@@ -41,11 +37,6 @@ h1 {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-left: 8px;
-}
-
-#add-btn:hover {
-    background-color: #0056b3;
 }
 
 #todo-list {
@@ -61,19 +52,10 @@ h1 {
     border-bottom: 1px solid #ddd;
 }
 
-.todo-item:last-child {
-    border-bottom: none;
-}
-
 .delete-btn {
-    background-color: #dc3545;
+    background-color: #ff4444;
     color: white;
     border: none;
     border-radius: 4px;
-    padding: 4px 8px;
     cursor: pointer;
-}
-
-.delete-btn:hover {
-    background-color: #c82333;
 }
