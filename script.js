@@ -21,9 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             todoList.appendChild(li);
             todoInput.value = '';
-
-            const deleteBtn = li.querySelector('.delete-btn');
-            deleteBtn.addEventListener('click', () => {
+            li.querySelector('.delete-btn').addEventListener('click', () => {
                 li.remove();
             });
         }

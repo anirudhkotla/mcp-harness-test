@@ -19,4 +19,4 @@ No installation is required. Simply open the `index.html` file in your web brows
 
 ## License
 
-This project is open source and available under the MIT License.
+This project is licensed under the MIT License.
