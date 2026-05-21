@@ -1,31 +1,33 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const todoInput = document.getElementById('todo-input');
-    const addBtn = document.getElementById('add-btn');
-    const todoList = document.getElementById('todo-list');
+const countEl = document.querySelector("#count");
+const bestScoreEl = document.querySelector("#best-score");
+const incrementButton = document.querySelector("#increment");
+const decrementButton = document.querySelector("#decrement");
+const resetButton = document.querySelector("#reset");
 
-    addBtn.addEventListener('click', addTodo);
-    todoInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            addTodo();
-        }
-    });
+let count = Number(localStorage.getItem("blueCounterCount") || "0");
+let best = Number(localStorage.getItem("blueCounterBest") || "0");
 
-    function addTodo() {
-        const todoText = todoInput.value.trim();
-        if (todoText !== '') {
-            const li = document.createElement('li');
-            li.className = 'todo-item';
-            li.innerHTML = `
-                <span>${todoText}</span>
-                <button class="delete-btn">Delete</button>
-            `;
-            todoList.appendChild(li);
-            todoInput.value = '';
+function save() {
+  localStorage.setItem("blueCounterCount", String(count));
+  localStorage.setItem("blueCounterBest", String(best));
+}
 
-            const deleteBtn = li.querySelector('.delete-btn');
-            deleteBtn.addEventListener('click', () => {
-                li.remove();
-            });
-        }
-    }
-});
+function render() {
+  countEl.textContent = String(count);
+  bestScoreEl.textContent = `Best ${best}`;
+}
+
+function updateCount(nextCount) {
+  count = nextCount;
+  if (count > best) {
+    best = count;
+  }
+  save();
+  render();
+}
+
+incrementButton.addEventListener("click", () => updateCount(count + 1));
+decrementButton.addEventListener("click", () => updateCount(count - 1));
+resetButton.addEventListener("click", () => updateCount(0));
+
+render();
